@@ -36,8 +36,7 @@ int main()
         // Iterator the top-left to top-right
         while (j <= right)
         {
-            cout << mat[i][j] << " ";
-            j++;
+            cout << mat[i][j++] << " ";
         }
 
         top++;
@@ -49,8 +48,7 @@ int main()
         // iterate from right-top to right-bottom
         while (i <= bottom)
         {
-            cout << mat[i][j] << " ";
-            i++;
+            cout << mat[i++][j] << " ";
         }
         right--;
         j--;
@@ -58,9 +56,8 @@ int main()
         // iterator from bottm-right to bottom-left
         while (j >= left)
         {
-            cout << mat[i][j] << " ";
-            j--;
-        }
+            cout << mat[i][j--] << " ";
+          }
 
         bottom--;
         j++;
@@ -68,8 +65,7 @@ int main()
         // iterator from botttom left to top-left
         while (i >= top)
         {
-            cout << mat[i][j] << " ";
-            i--;
+            cout << mat[i--][j] << " ";
         }
         left++;
         j++;
