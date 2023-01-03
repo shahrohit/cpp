@@ -22,28 +22,29 @@ int main()
     // }
 
     // method2
-    // int k = 6, j = 0;
-    // k = k % n;
+    int k = 3, j = 0;
+    k = k % n;
 
-    // int ansArr[n];
-    // for (int i = n - k; i < n; i++)
-    // {
-    //     ansArr[j++] = arr[i];
-    // }
+    int ansArr[n];
+    for (int i = n - k; i < n; i++)
+    {
+        ansArr[j++] = arr[i];
+    }
 
-    // for (int i = 0; i < n - k; i++)
-    // {
-    //     ansArr[j++] = arr[i];
-    // }
+    for (int i = 0; i < n - k; i++)
+    {
+        ansArr[j++] = arr[i];
+    }
 
-    // // printing
-    // for (int ele : ansArr)
-    // {
-    //     cout << ele << "\t";
-    // }
+    // printing
+    for (int ele : ansArr)
+    {
+        cout << ele << "\t";
+    }
 
     // method 3 => using vectors
 
+    // -> {5,4,3,2,1} -> {4,5} {1,2,3}
     // vector<int> v = {1, 2, 3, 4, 5};
     // int k = 6;
     // k = k % v.size();

@@ -5,29 +5,48 @@
 using namespace std;
 int main()
 {
-    int arr[] = {1, 2, 4, 5};
+    int arr[] = {1, 2, 3, 5};
     int n = 4;
     bool exist = false;
-    int i = 0, j = 1;
-    int x = 3;
+    int i = 0, j = n - 1;
+    int x = 2;
 
-    while (n > 1 && arr[i] + arr[j] <= x && j > i)
+    while (i < j)
     {
-        if (arr[i] + arr[j] == x)
+        if (arr[i] + arr[j] > x)
+        {
+            j--;
+        }
+        if (arr[i] + arr[j] < x)
+        {
+            i++;
+        }
+        if (arr[i] + arr[j] == x && i < j)
         {
             exist = true;
             break;
         }
-
-        j++;
-        if (j == n)
-        {
-            i++;
-            j = 0;
-        }
     }
 
-    exist ? cout << "Yes" : cout << "No";
-    cout << i << " " << j;
+    exist ? cout << " exist " : cout << " not exist ";
+
     return 0;
 }
+
+// while (n > 1 && arr[i] + arr[j] <= x && j > i)
+// {
+//     if (arr[i] + arr[j] == x)
+//     {
+//         exist = true;
+//         break;
+//     }
+
+//     j++;
+//     if (j == n)
+//     {
+//         j = ++i + 1;
+//     }
+// }
+
+// exist ? cout << "Yes" : cout << "No";
+// cout << i << " " << j;

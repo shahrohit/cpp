@@ -1,26 +1,29 @@
+
 #include <iostream>
 using namespace std;
+
 int main()
 {
     int row = 3, col = 4;
-    int matrix[row][col] = {
+    bool matrix[row][col] = {
         {0, 1, 1, 1},
-        {1, 1, 1, 1},
-        {0, 0, 1, 1}};
-    int max = -1, index;
+        {0, 1, 1, 1},
+        {1, 0, 1, 1}};
+    int max = col, index = -1;
 
     for (int i = 0; i < row; i++)
     {
-        int count = 0;
+
         for (int j = 0; j < col; j++)
         {
             if (matrix[i][j] == 1)
             {
-                count++;
-                if (count > max)
+
+                if (j < max)
                 {
                     index = i;
-                    max = count;
+                    max = j;
+                    break;
                 }
             }
         }
