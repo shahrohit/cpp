@@ -1,19 +1,17 @@
 #include <iostream>
 using namespace std;
-int factorail(int n)
+
+int sum(int n)
 {
-    if (n == 1 or n == 0)
-    {
+    if (n == 1)
         return 1;
-    }
-    return n * factorail(n - 1);
+
+    return n + sum(n - 1);
 }
 int main()
 {
-    unsigned int n;
-    cout << "Enter a number : ";
-    cin >> n;
-    cout << factorail(n);
+    int n = 10;
+    cout << sum(n);
     return 0;
 }
 
