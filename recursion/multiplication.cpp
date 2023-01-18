@@ -5,7 +5,7 @@ void f(int num, int k)
     if (k == 0)
         return;
     f(num, k - 1);
-    cout << (num * k) << " ";
+    cout << num << " x " << k << " = " << (num * k) << endl;
 }
 int main()
 {

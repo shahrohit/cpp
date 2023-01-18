@@ -1,19 +1,24 @@
 #include <iostream>
 using namespace std;
-void sequence(int n)
+void inc(int n)
 {
-    if (n == 1)
-    {
-        cout << 1 << " ";
+    if (n == 0)
         return;
-    }
-    sequence(n - 1);
+    inc(n - 1);
     cout << n << " ";
     return;
+}
+void dec(int n)
+{
+
+    if (n == 0)
+        return;
+    cout << n << " ";
+    dec(n - 1);
 }
 int main()
 {
     int n = 10;
-    sequence(n);
+    inc(n);
     return 0;
 }
