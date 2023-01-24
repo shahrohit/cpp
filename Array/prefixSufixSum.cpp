@@ -30,7 +30,7 @@ bool check(int arr[], int n)
 }
 int main()
 {
-    int arr[] = {1, 2, 3, 0, 5, 1};
+    int arr[] = {1, 1, 5, 0, 5, 1};
     cout << check(arr, 6);
     return 0;
 }

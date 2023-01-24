@@ -1,10 +1,30 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+void rotate(int *arr, int n, int k, vector<int> &result)
+{
+    k = k % n;
+
+    for (int i = n - k; i < n; i++)
+        result.push_back(arr[i]);
+
+    for (int i = 0; i < n - k; i++)
+        result.push_back(arr[i]);
+}
 int main()
 {
     int arr[] = {1, 2, 3, 4, 5};
     int n = 5;
+    int k = 7;
+    vector<int> result;
+    rotate(arr, n, k, result);
+
+    // printing
+    for (int i = 0; i < n; i++)
+    {
+        cout << result.at(i) << " ";
+    }
+
     // method 1;
     //  int a, b, n = 5;
     //  int k = 2;
@@ -22,25 +42,25 @@ int main()
     // }
 
     // method2
-    int k = 3, j = 0;
-    k = k % n;
+    // int k = 3, j = 0;
+    // k = k % n;
 
-    int ansArr[n];
-    for (int i = n - k; i < n; i++)
-    {
-        ansArr[j++] = arr[i];
-    }
+    // int ansArr[n];
+    // for (int i = n - k; i < n; i++)
+    // {
+    //     ansArr[j++] = arr[i];
+    // }
 
-    for (int i = 0; i < n - k; i++)
-    {
-        ansArr[j++] = arr[i];
-    }
+    // for (int i = 0; i < n - k; i++)
+    // {
+    //     ansArr[j++] = arr[i];
+    // }
 
-    // printing
-    for (int ele : ansArr)
-    {
-        cout << ele << "\t";
-    }
+    // // printing
+    // for (int ele : ansArr)
+    // {
+    //     cout << ele << "\t";
+    // }
 
     // method 3 => using vectors
 

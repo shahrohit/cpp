@@ -1,25 +1,29 @@
 #include <iostream>
 #include <limits.h>
 using namespace std;
-int max(int arr[], int n)
+int max(int *arr, int n)
 {
-    int index = 0;
-    for (int i = 1; i < n; i++)
+    int max = INT_MIN, second = INT_MIN;
+    for (int i = 0; i < n; i++)
     {
-        if (arr[i] > arr[index])
+        if (arr[i] > max)
         {
-            index = i;
+
+            second = max;
+            max = arr[i];
+        }
+        else if (arr[i] > second and arr[i] != max)
+        {
+            second = arr[i];
         }
     }
-    return index;
+    return second;
 }
 int main()
 {
-    int arr[] = {5, 1, 8, 17, 2, 0, 6, 10, 14, 22, 3}, n = 11;
-    int index = max(arr, n);
-    arr[index] = INT_MIN;
+    int arr[] = {4, 2, 5, 4, 3, 3, 5}, n = sizeof(arr) / sizeof(arr[0]);
 
-    cout << arr[max(arr, n)] << endl;
+    cout << max(arr, n) << endl;
 
     return 0;
 }
