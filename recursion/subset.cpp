@@ -13,7 +13,7 @@ void f(int *arr, int n, int idx = 0, int sum = 0)
 }
 int main()
 {
-    int arr[] = {1, 2, 3};
+    int arr[] = {1, 2, 2};
     int n = 3;
     f(arr, n);
     return 0;

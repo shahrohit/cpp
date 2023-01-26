@@ -1,24 +1,20 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 int main()
 {
-    int n = 5, a[] = {4, 3, 1, 2, 4};
-    vector<int> v(n, 0), final;
-
+    int arr[] = {1, 2, 2};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int sum = 0;
     for (int i = 0; i < n; i++)
     {
-        v.at(a[i]) += 1;
+        sum = 0;
+        for (int j = i; j < n; j++)
+        {
+            // sum += arr[j];
+            // cout << sum << " ";
+            cout << arr[j] << " ";
+        }
+        cout << endl;
     }
-    for (int i = 0; i < n; i++)
-    {
-        if (v.at(i) > 1)
-            final.push_back(i);
-    }
-    for (int i = 0; i < final.size(); i++)
-    {
-        cout << final[i] << endl;
-    }
-
     return 0;
 }
