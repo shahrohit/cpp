@@ -3,9 +3,9 @@ using namespace std;
 int binarySearch(int arr[], int n, int key)
 {
     int start = 0, end = n - 1, mid;
-    for (int i = 0; i <= n / 3; i++)
+    while (start <= end)
     {
-        mid = (start + end) / 2;
+        mid = start + (end - start) / 2; // -> (start + end)/2
         if (key > arr[mid])
             start = mid + 1;
 
@@ -18,7 +18,7 @@ int binarySearch(int arr[], int n, int key)
 }
 int main()
 {
-    int arr[] = {1, 2, 3, 4, 5}, n = 5;
+    int arr[] = {1, 2, 3, 3, 5}, n = 5;
 
     int key = 3;
 
