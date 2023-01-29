@@ -5,22 +5,20 @@ void sort(int arr, int n)
 }
 int main()
 {
-    int arr[] = {5, 1, 8, 17, 2, 0, 6, 10, 14, 3}, n = 10;
+    int arr[] = {5, 2, 2, 2};
+    int n = sizeof(arr) / sizeof(arr[0]);
     // cout << "Enter the value of n : ";
     // cin >> n;
 
     for (int i = 0; i < n - 1; i++)
     {
-
+        int minIndex = i;
         for (int j = i + 1; j < n; j++)
         {
-            if (arr[j] < arr[i])
-            {
-                int temp = arr[j];
-                arr[j] = arr[i];
-                arr[i] = temp;
-            }
+            if (arr[j] < arr[minIndex])
+                minIndex = j;
         }
+        swap(arr[minIndex], arr[i]);
     }
 
     for (int elem : arr)
