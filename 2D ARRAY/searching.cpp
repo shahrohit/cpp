@@ -1,23 +1,18 @@
 #include <iostream>
+#include <vector>
 using namespace std;
-int main()
+bool search(vector<vector<int>> &mat, int key)
 {
-    int m = 4, n = 4;
-    int mat[m][n] = {
-        {1, 4, 7, 11},
-        {2, 5, 8, 12},
-        {3, 6, 9, 16},
-        {10, 13, 14, 17}};
 
+    int m = mat.size();
+    int n = mat[0].size();
     int row = 0, col = n - 1;
     bool isExist = false;
-    int key = 9;
     while (row < m && col >= 0)
     {
         if (key == mat[row][col])
         {
-            isExist = true;
-            break;
+            return true;
         }
         if (key < mat[row][col])
         {
@@ -28,8 +23,19 @@ int main()
             row++;
         }
     }
-    cout << isExist << endl;
-    cout << row << "\t" << col;
+    return false;
+}
+int main()
+{
+    int m = 4, n = 4;
+    vector<vector<int>> mat{
+        {1, 4, 7, 11},
+        {2, 5, 8, 12},
+        {3, 6, 9, 16},
+        {10, 13, 14, 17}};
+
+    int key = 4;
+    cout << search(mat, key);
 
     return 0;
 }

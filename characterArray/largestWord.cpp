@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
-int main()
+string largeset(string &sentence)
 {
-    char sentence[100] = "my name is rohit kumara shah";
     int i = 0, j = 0;
     int count = 0;
     int start = 0, end = 0;
-    while (sentence[j] != '\0')
+    string str = "";
+    for (j; sentence[j] != '\0'; j++)
     {
 
         if (sentence[j] == ' ')
@@ -20,15 +20,18 @@ int main()
             count = 0;
         }
         else
-        {
             count++;
-        }
-        j++;
     }
-    // cout << end - start;
     for (int i = start; i < end; i++)
     {
-        cout << sentence[i];
+        str += sentence[i];
     }
+    return str;
+}
+int main()
+{
+    string sentence = "my nameaaa is rohit kumara shah";
+    string ans = largeset(sentence);
+    cout << ans;
     return 0;
 }
