@@ -1,1 +1,1 @@
-head->next->next
+head1
